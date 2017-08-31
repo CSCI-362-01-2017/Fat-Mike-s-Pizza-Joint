@@ -1,0 +1,11 @@
+Our top 3 Candidates: 
+	Cadasta: "Technology to help communities document their land rights around the world."
+
+	Martus: "Martus, the Greek word for "witness," is a software tool that allows users to document incidents of abuse by creating bulletins, and storing them on redundant servers located around the world. Using Martus helps countries torn apart by civil conflicts come to a consensus and rational understanding of their histories, leading to reconciliation and reform processes."
+
+	Insight Segmentation and Registration Toolkit (ITK): "National Library of Medicine: ITK is an open-source, cross-platform system that provides developers with an extensive suite of software tools for image analysis. Developed through extreme programming methodologies, ITK employs leading-edge algorithms for registering and segmenting multidimensional data."
+
+Reasoning: 
+	Cadasta caught our attention, because it is an interactive map to document land rights around the world. This is particularly interesting because of the political implications of land rights, especially in regions of the world such as the Middle East
+	Martus caught our attention, because it is software aimed at aiding less-developed countries in documenting and understanding reports of abuse. Additionally, it was interesting that Martus emphasizes security and redundant servers.
+	ITK caught our attention, because it's aimed at aiding devlopers with image analysis. Likewise, it is not enduser software, but a library given to developers that are building tools for endusers in the medical field. 
