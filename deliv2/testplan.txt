@@ -1,15 +1,23 @@
-TESTING PROCESS
+The testing process
+A description of the major phases of the system testing process. This may be broken down into the testing of individual sub-systems, the testing of external system interfaces, etc.
 
-REQUIREMENTS TRACABILITY
+Requirements traceability
+Users are most interested in the system meeting its requirements and testing should be planned so that all requirements are individually tested.
 
-TESTED ITEMS
+Tested items
+The products of the software process that are to be tested should be specified.
 
-TESTING SCHEDULE
+Testing schedule
+An overall testing schedule and resource allocation. This schedule should be linked to the more general project development schedule.
 
-TEST RECORDING PROCEDURES
+Test recording procedures
+It is not enough simply to run tests; the results of the tests must be systematically recorded. It must be possible to audit the testing process to check that it has been carried out correctly.
 
-HARDWARE AND SOFTWARE REQUIREMENTS
+Hardware and software requirements
+This section should set out the software tools required and estimated hardware utilisation.
 
-CONSTRAINTS
+Constraints
+Constraints affecting the testing process such as staff shortages should be anticipated in this section.
 
-SYSTEM TESTS
+System tests
+This section, which may be completely separate from the test plan, defines the test cases that should be applied to the system. These tests are derived from the system requirements specification.
