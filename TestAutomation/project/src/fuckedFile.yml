@@ -1,0 +1,7 @@
+test:
+    namez: Test parser
+    requirement: Parsing for python driver
+    component: not sure yet
+    method: not sure yet
+    input: this file
+    output: wow
