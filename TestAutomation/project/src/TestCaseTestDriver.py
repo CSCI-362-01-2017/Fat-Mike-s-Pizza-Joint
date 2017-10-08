@@ -21,7 +21,7 @@ def main():
         print("Error: invalid file specified for test case")
         exit(-1)
     except IndexError:
-        print("USAGE: ./InitialD.py [path to test case specification file]")
+        print("USAGE: ./TestCaseTestDriver.py [path to test case specification file]")
         exit(-1)
 
 main()
