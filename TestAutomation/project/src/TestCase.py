@@ -3,14 +3,7 @@
 #
 # Written by Chandler DeLoach
 class TestCase:
-    def __init__(self, testCaseFile):
-        # On init, we're going to parse a file to build our test case.
-        # If any errors are encountered while parsing, our "self.valid" boolean becomes false,
-        # signaling that the object should be not be processed further.
-        #
-        # INIT METHOD STATUS: Tested by creator, unreviewed by peers:
-        # [ ] Jayse White
-        # [ ] Ethan Hendrix
+    def validate(testCaseFile):
         error = None
         keys = [ ["name", "", 0], ["requirement", "", 0], ["component", "", 0], ["method", "", 0], ["input", "", 0], ["output", "", 0] ] # [name, field, incidences]
         for line in testCaseFile:
@@ -60,15 +53,23 @@ class TestCase:
                     error = "MissingSpecError"
         if error is not None:
             print("Error in file: %s" % errorList[error])
-            self.valid = False
+            return None
         else:
-            self.valid = True
-            self.name        = keys[0][1]
-            self.requirement = keys[1][1]
-            self.component   = keys[2][1]
-            self.method      = keys[3][1]
-            self.input       = keys[4][1]
-            self.output      = keys[5][1]
+            fields = []
+            for key in keys:
+                fields.append(key[1])
+            return fields
+
+    def __init__(self, validatedFile):
+        if validatedFile is not None:
+            self.name        = validatedFile[0]
+            self.requirement = validatedFile[1]
+            self.component   = validatedFile[2]
+            self.method      = validatedFile[3]
+            self.input       = validatedFile[4]
+            self.output      = validatedFile[5]
+        else:
+            print("Error: attempted to create TestCase from improperly validated file!")
 
     def isValid(self):
         return self.valid

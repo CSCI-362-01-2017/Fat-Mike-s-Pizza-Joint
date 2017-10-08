@@ -4,8 +4,9 @@
 def main():
     try:
         with open(sys.argv[1]) as testfile:
-            tc = TestCase(testfile)
-            if tc.isValid():
+            vfile = validate(testfile)
+            if vfile is not None:
+                tc = TestCase(vfile)
                 print("Test case looks good!")
                 print("Name is %s" % tc.name)
                 print("Requirement being tested is %s" % tc.requirement)
