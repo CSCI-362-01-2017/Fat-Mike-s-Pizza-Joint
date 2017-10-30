@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 # TestCase class for containerizing data read from specification files
 #
 # Written by Chandler DeLoach
@@ -119,6 +118,8 @@ class TestCase:
             self.input_constructor  = blueprint[5]
             self.input_method       = blueprint[6]
             self.oracle             = blueprint[7]
-            
         else:
             print("Error: attempted to create TestCase from improperly validated file!")
+
+    def get_name(self):
+        return self.name
