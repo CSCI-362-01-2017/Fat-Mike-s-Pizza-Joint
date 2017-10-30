@@ -70,6 +70,3 @@ class TestCase:
             self.output      = validatedFile[5]
         else:
             print("Error: attempted to create TestCase from improperly validated file!")
-
-    def isValid(self):
-        return self.valid

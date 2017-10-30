@@ -19,6 +19,8 @@ class TestPlan:
             print("Warning: tried to load a non-TestCase object!")
 
     def displaySequenceBrief(self):
+        # This is to display a brief overview of test cases to be executed
+        # BEFORE execution
         numSequenceItem = 1
         print("The current sequence is:")
         for tc in self.testCases:

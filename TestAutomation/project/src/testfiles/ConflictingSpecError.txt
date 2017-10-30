@@ -1,0 +1,11 @@
+name: break things
+requirement: automated breakage unit
+component:
+    class: Class
+    provider: file.py
+requirement: things working unit
+method: method()
+input:
+    constructor: "if there's something strange, sleepin in your bed", 666
+    method: "BUSTIN BUSTIN BUSTIN"
+oracle: predictor

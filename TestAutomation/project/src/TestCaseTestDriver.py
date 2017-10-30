@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 # Driver for testing TestCase.py, feel free to modify if you can think of any other relevant testing procedures
 # Written by Chandler DeLoach
+import TestCase
+
 def main():
     try:
         with open(sys.argv[1]) as testfile:
-            vfile = validate(testfile)
+            vfile = TestCase.validate(testfile)
             if vfile is not None:
                 tc = TestCase(vfile)
                 print("Test case looks good!")
