@@ -1,10 +1,22 @@
 # Fat Mike's Testing Framework
-This testing framework is developed specifically for automated unit tests on components for the Cadasta project, but ought to work with any similar Python-based project. The primary function of this framework is to read in test case specifications in this format:
-```name       : Name of test case
-requirement: Requirement being tested
-component  : Component containing method
-method     : Method being tested
-input      : Input including arguments
-output     : Expected output
+This testing framework is developed specifically for automated unit tests on Python project source code files.
+
+This framework reads in test case specifications in this format:
+```name: (name of test case)
+requirement: (requirement being tested)
+component: 
+    class: (class containing method being tested)
+    provider: (.py file which provides class) 
+method: (method being tested)
+input:
+    constructor: (comma-seperated arguments to constructor)
+    method: (comma-seperated arguments to constructor)
+oracle: (expected method return)
 ```
 and use them to run automated unit tests on the codebase of the project specified (by default this is Cadasta of course).
+
+Note that certain constructors and methods may take or require no arguments; this specified in a testCase file by the **void** keyword, ex.
+```
+    constructor: void
+    method: void
+```
