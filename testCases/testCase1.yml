@@ -5,5 +5,5 @@ component:
 method: validate()
 input:
     constructor: EmailSimilarityValidator(Object)
-    method: "ValidPassword",user = ValidUser
+    method: "ValidPassword","ValidEmail@website.com"
 oracle: None
