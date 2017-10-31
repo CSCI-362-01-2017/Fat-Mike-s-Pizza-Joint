@@ -1,0 +1,9 @@
+requirement: Email Similarity
+component: 
+    class: EmailSimilarityValidator
+    provider: vagrant/cadasta/accounts/validators.py
+method: validate()
+input:
+    constructor: EmailSimilarityValidator(Object)
+    method: "hendrixet@g.cofc.edu", user=ValidUser
+oracle: Error
