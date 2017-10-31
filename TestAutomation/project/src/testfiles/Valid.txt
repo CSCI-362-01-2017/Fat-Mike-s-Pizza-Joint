@@ -2,7 +2,7 @@ name: break things
 requirement: automated breakage unit
 component:
     class: TestClass
-    provider: TestClass
+    provider: TestClass.py
 method: add()
 input:
     constructor: void

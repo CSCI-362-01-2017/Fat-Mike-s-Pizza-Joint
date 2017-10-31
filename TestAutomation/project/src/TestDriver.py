@@ -1,5 +1,5 @@
 from Driver import Driver
-from NewTestCase import TestCase
+from TestCase import TestCase
 
 def main():
     with open("testfiles/Valid.txt", "r") as testfile:

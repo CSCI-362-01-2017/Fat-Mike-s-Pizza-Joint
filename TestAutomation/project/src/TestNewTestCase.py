@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from NewTestCase import TestCase
+from TestCase import TestCase
 import sys
 
 def main():

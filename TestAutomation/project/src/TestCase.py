@@ -80,6 +80,8 @@ class TestCase:
             else:
                 if token == "method" and field.find("()"):
                     field = field[:len(field)-2] # "Normalize" method_name by removing '()'
+                elif token == "component_provider" and field.find(".py"):
+                    field = field[:len(field)-3] # "Normalize" method_name by removing '()'
                 error = TestCase.store_value(token, field, fieldmap) # will remain None if no error
                 if error is not None:
                     break
@@ -114,12 +116,9 @@ class TestCase:
             self.requirement        = blueprint[1]
             self.method             = blueprint[2]
             self.component_class    = blueprint[3]
-            self.component_provider = blueprint[4]
+            self.component_provider = blueprint[4].replace("/", ".")
             self.input_constructor  = blueprint[5]
             self.input_method       = blueprint[6]
             self.oracle             = blueprint[7]
         else:
             print("Error: attempted to create TestCase from improperly validated file!")
-
-    def get_name(self):
-        return self.name
