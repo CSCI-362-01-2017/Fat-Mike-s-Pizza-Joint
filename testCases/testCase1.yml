@@ -1,9 +1,10 @@
+name: Valid Username
 requirement: Email Similarity
 component: 
     class: EmailSimilarityValidator
     provider: vagrant/cadasta/accounts/validators.py
 method: validate()
 input:
-    constructor: EmailSimilarityValidator(Object)
+    constructor: Object
     method: "ValidPassword","ValidEmail@website.com"
 oracle: None

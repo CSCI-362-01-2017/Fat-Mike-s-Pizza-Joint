@@ -1,9 +1,10 @@
+name: Invalid Password
 requirement: Email Similarity
 component: 
     class: EmailSimilarityValidator
     provider: vagrant/cadasta/accounts/validators.py
 method: validate()
 input:
-    constructor: EmailSimilarityValidator(Object)
+    constructor: Object
     method: "Invalid Password?!@#($(","ValidEmail@website.com"
 oracle: Error
