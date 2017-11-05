@@ -1,0 +1,8 @@
+printlast() {
+    python3 << EOF
+splitstr = "$1".split("/")
+print(splitstr[len(splitstr)-1])
+EOF
+}
+
+printlast $1

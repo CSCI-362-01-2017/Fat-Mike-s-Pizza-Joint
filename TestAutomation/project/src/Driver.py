@@ -10,7 +10,7 @@ class Driver:
         # TODO: add sys.path specification
         t = self.testcase
         try:
-           exec("from target.%s import %s" % (t.component_provider, t.component_class))
+           exec("from %s import %s" % (t.component_provider, t.component_class))
         except ImportError:
             print("Error in execution: class or component provider target.%s not found" % t.component_provider)
             return None
@@ -22,7 +22,7 @@ class Driver:
         except TypeError:
             print("Error in construction: invalid number of arguments to constructor")
             return None
-        if t.oracle.find("Error"):
+        if t.oracle.find("Error") != -1:
             # Expect an error
             sequence='''
             try:
@@ -33,7 +33,7 @@ class Driver:
             '''
             exec(sequence % (t.method, t.input_method, t.oracle, t.method, t.component_class, t.oracle))
         else:
-            # 
+            # Expect method return
             try:
                 METHOD_RETURN = eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method))
             except AttributeError:
