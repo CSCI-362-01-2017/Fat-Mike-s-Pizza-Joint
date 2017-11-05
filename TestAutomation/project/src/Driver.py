@@ -9,19 +9,22 @@ class Driver:
     def execute(self):
         # TODO: add sys.path specification
         t = self.testcase
-        try:
-           exec("from %s import %s" % (t.component_provider, t.component_class))
-        except ImportError:
-            print("Error in execution: class or component provider target.%s not found" % t.component_provider)
-            return None
-        try:
-            TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
-        except NameError:
-            print("Error in construction: class not found in file")
-            return None
-        except TypeError:
-            print("Error in construction: invalid number of arguments to constructor")
-            return None
+        exec("from %s import %s" % (t.component_provider, t.component_class))
+        #try:
+        #   exec("from %s import %s" % (t.component_provider, t.component_class))
+        #except ImportError:
+        #    print("Error in execution: class or component provider %s not found" % t.component_provider)
+        #    raise(ImportError)
+        #    return None
+        TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
+        #try:
+        #    TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
+        #except NameError:
+        #    print("Error in construction: class not found in file")
+        #    return None
+        #except TypeError:
+        #    print("Error in construction: invalid number of arguments to constructor")
+        #    return None
         if t.oracle.find("Error") != -1:
             # Expect an error
             sequence='''

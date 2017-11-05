@@ -4,7 +4,7 @@ source printlast
 INFILE="$1"
 SHORTNAME="`printlast $INFILE`"
 
-if [ -e "$SHORTNAME.html" ]; then
+if [ -e "../reports/$SHORTNAME.html" ]; then
     rm "$SHORTNAME.html"
 fi
 cat > "../reports/$SHORTNAME.html" << EOF
@@ -17,4 +17,4 @@ EOF
 while read line; do
     echo "$line<br>" >> "../reports/$SHORTNAME.html"
 done < "$INFILE"
-printf "</body>\n</html>\n" >> "$SHORTNAME.html"
+printf "</body>\n</html>\n" >> "../reports/$SHORTNAME.html"

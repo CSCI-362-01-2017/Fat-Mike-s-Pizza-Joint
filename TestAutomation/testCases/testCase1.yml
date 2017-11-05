@@ -2,7 +2,7 @@ name: Valid Username
 requirement: Email Similarity
 component: 
     class: EmailSimilarityValidator
-    provider: cadasta/accounts/validators.py
+    provider: validators.py
 method: validate()
 input:
     constructor: Object
