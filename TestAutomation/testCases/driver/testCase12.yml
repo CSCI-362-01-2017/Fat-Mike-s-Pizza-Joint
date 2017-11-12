@@ -1,0 +1,11 @@
+name: nonexistent class
+requirement: class exists
+component:
+    class: Nonexistent
+    provider: Driver.py
+method: execute()
+input:
+    constructor: testCase10_0.yml
+    method:
+oracle: Error
+

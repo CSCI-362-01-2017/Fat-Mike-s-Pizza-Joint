@@ -1,5 +1,6 @@
 Test Cases
 
+name: (name of the test case)
 requirement: (requirement being tested)
 component: 
     class: (class containing method being tested)
