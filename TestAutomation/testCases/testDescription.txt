@@ -1,0 +1,22 @@
+Test Cases
+
+Test Case:
+ -  8 for parsing files which should raise various errors 
+ - ~5 for extract_contents(singular line parsing)
+ -  2 for store_value(valid,invalid type)
+ 
+Driver: 
+ -  nonexistent class
+ -  nonexistent provider
+ -  Class does not have method
+ -  Invalid arguments to constructor
+ -  invalid arguments to method
+ -  invalid "Error" type specified for Oracle
+ -  expecting return: 
+     -  int,double,string,etc...
+     -  user specified class
+     -  library (imported)
+ -  expecting error: 
+     -  built in error
+     -  user specified 
+     -  library import error 
