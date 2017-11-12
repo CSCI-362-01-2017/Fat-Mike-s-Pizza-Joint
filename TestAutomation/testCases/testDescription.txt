@@ -1,5 +1,15 @@
 Test Cases
 
+requirement: (requirement being tested)
+component: 
+    class: (class containing method being tested)
+    provider: (.py file which provides class) 
+method: (method being tested)
+input:
+    constructor: (comma-seperated arguments to constructor)
+    method: (comma-seperated arguments to constructor)
+oracle: (expected method return)
+
 Test Case:
  -  8 for parsing files which should raise various errors 
  - ~5 for extract_contents(singular line parsing)

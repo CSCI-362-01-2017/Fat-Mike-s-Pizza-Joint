@@ -1,0 +1,9 @@
+name: Miss Spec Error
+requirement: automated breakage unit
+component:
+    class: Class
+    provider: file.py
+input:
+    constructor: "if there's something strange, sleepin in your bed", 666
+    method: "BUSTIN BUSTIN BUSTIN"
+oracle: predictor

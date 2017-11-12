@@ -1,0 +1,10 @@
+name : Spec Syntax Error
+requirement: automated breakage unit
+component:
+    class: Class
+    provider: file.py
+method: method()
+input:
+    constructor: "if there's something strange, sleepin in your bed", 666
+    method: "BUSTIN BUSTIN BUSTIN"
+oracle: predictor
