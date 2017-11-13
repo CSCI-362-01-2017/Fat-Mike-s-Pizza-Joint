@@ -1,4 +1,9 @@
-Test Cases
+Test Description
+
+parsing test cases: testCase00.yml - testCase07.yml
+single line parsing test cases: testCase08.yml - testCase12.yml
+store_value test cases: testCase13.yml - testCase14.yml
+driver test cases: testCase15.yml - testCase24.yml
 
 name: (name of the test case)
 requirement: (requirement being tested)
