@@ -7,4 +7,4 @@ rm tcs
 cd ../reports
 cat * > final.html
 xdg-open final.html
-rm *.yml.html 2>/dev/null
+cd ../scripts
