@@ -45,7 +45,7 @@ class TestCase:
         return "InvalidSpecTypeError" # If they got here, the spec type was invalid
 
     @staticmethod
-    def parse_syntax(testCaseFile):
+    def parse_syntax(testCaseFileName):
         fieldmap = [ ["name", "", 0],
                      ["requirement", "", 0],
                      ["method", "", 0],
@@ -60,31 +60,32 @@ class TestCase:
                        "provider": "component_provider" }
         error = None
         state_counter = 0 # number of upcoming lines to expect sub-specifications
-        for line in testCaseFile:
-            line_content = TestCase.extract_contents(line)
-            if type(line_content) is str: # we know it's an error string and not a list
-                error = line_content
-                break
-            else:
-                token = line_content[0]
-                field = line_content[1]
-            if state_counter > 0:
-                try:
-                    token = token_dict[token]
-                except KeyError:
-                    error = "InvalidSubSpecTypeError"
+        with open(testCaseFileName, "r") as testCaseFile:
+            for line in testCaseFile:
+                line_content = TestCase.extract_contents(line)
+                if type(line_content) is str: # we know it's an error string and not a list
+                    error = line_content
                     break
-                state_counter -= 1
-            if token == "component" or token == "input":
-                state_counter = 2
-            else:
-                if token == "method" and field.find("()"):
-                    field = field[:len(field)-2] # "Normalize" method_name by removing '()'
-                elif token == "component_provider" and field.find(".py"):
-                    field = field[:len(field)-3] # "Normalize" method_name by removing '()'
-                error = TestCase.store_value(token, field, fieldmap) # will remain None if no error
-                if error is not None:
-                    break
+                else:
+                    token = line_content[0]
+                    field = line_content[1]
+                if state_counter > 0:
+                    try:
+                        token = token_dict[token]
+                    except KeyError:
+                        error = "InvalidSubSpecTypeError"
+                        break
+                    state_counter -= 1
+                if token == "component" or token == "input":
+                    state_counter = 2
+                else:
+                    if token == "method" and field.find("()"):
+                        field = field[:len(field)-2] # "Normalize" method_name by removing '()'
+                    elif token == "component_provider" and field.find(".py"):
+                        field = field[:len(field)-3] # "Normalize" method_name by removing '()'
+                    error = TestCase.store_value(token, field, fieldmap) # will remain None if no error
+                    if error is not None:
+                        break
         errorList = { "SpecSyntaxError": "invalid syntax in one or more specifications",
                       "InvalidSpecTypeError": "invalid specification type for test case",
                       "ConflictingSpecError": "one or more conflicting specifications within test case",

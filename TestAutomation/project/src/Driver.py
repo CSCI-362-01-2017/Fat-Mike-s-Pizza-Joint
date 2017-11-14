@@ -24,7 +24,8 @@ class Driver:
             print("Error: %s" % error)
         if error is None:
             try:
-                TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
+                if t.input_constructor != "static":
+                    TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
             except NameError:
                 print("Error in construction: constructor for class %s not found" % t.component_provider)
                 error = "NameError"
@@ -38,23 +39,30 @@ class Driver:
                 print("Error: %s" % error)
         if error is None:
             try:
-                METHOD_RETURN = eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method))
+                if t.input_constructor == "static":
+                    METHOD_RETURN = str(eval("%s.%s(%s)"
+                                            % (t.component_class, t.component_method, t.input_method)))
+                else:
+                    METHOD_RETURN = str(eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method)))
             except AttributeError:
-                print("Error: method %s not found in class %s from provider %s" % t.method, t.component_class, t.component_provider)
+                print("Error: method %s not found in class %s from provider %s"
+                      % t.method, t.component_class, t.component_provider)
                 error = "AttributeError"
             except:
                 raw = str(sys.exc_info()[0]).split()[1]
                 error = raw[1:len(raw)-2]
                 print("Error: %s" % error)
-        if error is not None:
-            print("Method %s from class %s returned %s" % (t.method, t.component_class, str(METHOD_RETURN)))
-            print("Oracle predicted %s" % str(t.oracle))
-            oracle_correct = eval("%s == %s" % (str(METHOD_RETURN), str(t.oracle)))
+        if error is None:
+            print("Method : %s\nClass : %s\nReturn : %s\nOracle : %s"
+                  % (t.method, t.component_class, METHOD_RETURN, t.oracle))
+            oracle_correct = eval("%s == %s" % (METHOD_RETURN, t.oracle))
         else:
+            print("Method : %s\nClass : %s\nError : %s\nOracle : %s"
+                  % (t.method, t.component_class, error, t.oracle))
             print("Method %s from class %s raised %s" % (t.method, t.component_class, error))
-            print("Oracle predicted %s" % str(t.oracle))
-            oracle_correct = eval("%s == %s" % (error, str(t.oracle)))
+            print("Oracle predicted %s" % t.oracle)
+            oracle_correct = eval("%s == %s" % (error, t.oracle))
         if oracle_correct:
-            print("...and was correct!")
+            print("PASS")
         else:
-            print("...and was not correct.")
+            print("FAIL")
