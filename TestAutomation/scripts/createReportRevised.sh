@@ -4,9 +4,9 @@ source printlast
 INFILE="$1"
 SHORTNAME="`printlast $INFILE`"
 
-if [ -e "../reports/$SHORTNAME.html" ]; then
-    rm "$SHORTNAME.html"
-fi
+#if [ -e "../reports/$SHORTNAME.html" ]; then
+#    rm "$SHORTNAME.html"
+#fi
 cat > "../reports/$SHORTNAME.html" << EOF
 <html>
 <head>
