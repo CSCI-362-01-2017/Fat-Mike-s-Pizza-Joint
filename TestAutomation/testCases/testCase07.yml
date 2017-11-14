@@ -6,5 +6,5 @@ component:
 method: parse_syntax
 input:
     constructor: static 
-    method: "brokenParseFiles/Valid.yml"
+    method: "testCases/brokenParseFiles/Valid.yml"
 oracle: Valid

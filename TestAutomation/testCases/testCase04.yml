@@ -5,5 +5,5 @@ component:
     provider: TestCase
 input:
     constructor: static
-    method: "brokenParseFiles/NullFieldError.yml"
+    method: "testCases/brokenParseFiles/NullFieldError.yml"
 oracle: NullFieldError

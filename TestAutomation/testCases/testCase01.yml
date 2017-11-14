@@ -6,5 +6,5 @@ component:
 method: parse_syntax
 input:
     constructor: static
-    method: "brokenParseFiles/InvalidSpecTypeError.yml"
+    method: "testCases/brokenParseFiles/InvalidSpecTypeError.yml"
 oracle: InvalidSpecTypeError
