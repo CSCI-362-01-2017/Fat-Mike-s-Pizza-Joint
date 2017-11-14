@@ -1,10 +1,10 @@
-name: successful test case
+name: successful test case for single line parsing
 requirement: single line parsing
 component:
     class: TestCase
-    provider: TestCase.py
-method: extract_contents()
+    provider: TestCase
+method: extract_contents
 input:
-    constructor: void
-    method: requirement: single line parsing
+    constructor: static
+    method: "requirement: single line parsing"
 oracle: "['single line parsing', 'requirement' ]"
