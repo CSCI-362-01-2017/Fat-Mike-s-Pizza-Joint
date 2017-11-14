@@ -1,6 +1,7 @@
 # Actual Driver class for utilized by testing framework
 # Written by Chandler DeLoach
 import sys
+from TestCase import TestCase
 
 class Driver:
     def __init__(self, testcase):
