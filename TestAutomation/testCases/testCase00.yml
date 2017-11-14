@@ -1,11 +1,10 @@
-#Test Case 1:
-name: break things
-requirement: automated breakage unit
+name: conflicting spec error
+requirement: parsing files
 Component: 
-    class: Class
-    provider: file.py
-method: method()
+    class: TestCase
+    provider: TestCase
+method: parse_syntax
 input:
-    constructor: "If there's something strange, sleepin in your bed", 666
-    method: "BUSTIN BUSTIN BUSTIN"
-oracle: predictor
+    constructor: static
+    method: "brokenParseFiles/ConflictingSpecError.yml"
+oracle: ConflictingSpecError
