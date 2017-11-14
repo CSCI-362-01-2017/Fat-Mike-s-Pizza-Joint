@@ -5,6 +5,6 @@ component:
     provider: Driver.py
 method: nonexistent()
 input:
-    constructor: ["name","req","nonexistent","TestClass","TestClass.py","",10,10]
+    constructor: ["name","req","nonexistent","TestClass","TestClass.py","","10","10"]
     method: void
 oracle: AttributeError

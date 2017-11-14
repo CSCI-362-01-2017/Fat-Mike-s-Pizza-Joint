@@ -6,5 +6,5 @@ component:
 method: parsey_syntax
 input:
     constructor: static
-    method: "brokenParseFiles/NullFieldError2.yml"
+    method: "testCases/brokenParseFiles/NullFieldError2.yml"
 oracle: NullFieldError

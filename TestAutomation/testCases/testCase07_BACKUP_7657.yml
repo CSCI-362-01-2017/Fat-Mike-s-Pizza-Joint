@@ -1,0 +1,14 @@
+name: valid parse
+requirement: parsing files 
+component:
+    class: TestCase 
+    provider: TestCase
+method: parse_syntax
+input:
+    constructor: static 
+    method: "testCases/brokenParseFiles/Valid.yml"
+<<<<<<< HEAD
+oracle: ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']
+=======
+oracle: Valid
+>>>>>>> 07cc035d42dc45b97f3f63f09ef9c0c0a176cd98
