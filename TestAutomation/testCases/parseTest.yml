@@ -1,0 +1,10 @@
+name: Test parsing in general
+requirement: parsing files
+component:
+    class: TestCase
+    provider: TestCase
+method: parse_syntax
+input:
+    constructor: static
+    method: "brokenParseFiles/Valid.txt"
+oracle: ['one', 'two', 'add', 'TestClass', 'TestClass', '', 5, 5]

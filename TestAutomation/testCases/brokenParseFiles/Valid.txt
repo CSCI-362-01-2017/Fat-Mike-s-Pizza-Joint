@@ -1,5 +1,5 @@
-name: break things
-requirement: automated breakage unit
+name: one
+requirement: two
 component:
     class: TestClass
     provider: TestClass.py

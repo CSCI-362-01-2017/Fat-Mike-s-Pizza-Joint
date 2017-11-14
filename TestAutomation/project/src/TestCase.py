@@ -79,9 +79,11 @@ class TestCase:
                 if token == "component" or token == "input":
                     state_counter = 2
                 else:
-                    if token == "method" and field.find("()"):
+                    if token == "method" and field.find("()") != -1:
+                        print("Chopping %s" % field)
                         field = field[:len(field)-2] # "Normalize" method_name by removing '()'
-                    elif token == "component_provider" and field.find(".py"):
+                    elif token == "component_provider" and field.find(".py") != -1:
+                        print("Chopping %s" % field)
                         field = field[:len(field)-3] # "Normalize" method_name by removing '()'
                     error = TestCase.store_value(token, field, fieldmap) # will remain None if no error
                     if error is not None:
@@ -110,6 +112,9 @@ class TestCase:
             for field in fieldmap:
                 blueprint.append(field[1]) # structure is implicit in ordering
             return blueprint
+    
+    def __str__(self):
+        return "Name: " + self.name + "\n" + "Requirement: " + self.requirement + "\n" + "Method: " + self.method + "\n" + "Class: " + self.component_class + "\n" + "Provider: " + self.component_provider + "\n" + "Constructor: " + self.input_constructor + "\n" + "Method: " + self.input_method + "\n" + "Oracle:" + self.oracle
 
     def __init__(self, blueprint):
         if blueprint is not None:

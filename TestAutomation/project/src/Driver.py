@@ -9,19 +9,21 @@ class Driver:
     def execute(self):
         t = self.testcase
         error = None
+        print(self.testcase)
         try:
            exec("from %s import %s" % (t.component_provider, t.component_class))
         except ImportError:
-            print("Error in import: class %s not found" % t.component_class)
-            error = "ImportError"
+            print("Error in import: class %s or module %s not found" % (t.component_class, t.component_provider))
+            return "ImportError"
         except ModuleNotFoundError:
             print("Error in import: provider module %s not found" % t.component_provider)
-            error = "ModuleNotFoundError"
+            return "ModuleNotFoundError"
         except:
             print("Unexpected error encountered in import, congrats!")
             raw = str(sys.exc_info()[0]).split()[1]
             error = "UnexpectedImport" + raw[1:len(raw)-2]
             print("Error: %s" % error)
+            return error
         if error is None:
             try:
                 if t.input_constructor != "static":
@@ -41,7 +43,7 @@ class Driver:
             try:
                 if t.input_constructor == "static":
                     METHOD_RETURN = str(eval("%s.%s(%s)"
-                                            % (t.component_class, t.component_method, t.input_method)))
+                                            % (t.component_class, t.method, t.input_method)))
                 else:
                     METHOD_RETURN = str(eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method)))
             except AttributeError:
