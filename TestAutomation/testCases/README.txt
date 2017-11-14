@@ -39,15 +39,13 @@ Driver:
      -  library import error 
 REVISIT: testCase20.yml-testCase26.yml
 
-CURRENT RUNTIME ERROR TEST CASES
-testCase03.yml
-testCase07.yml
-not enough arguments to format string: testCase28.yml???
-BREAK ERROR - TEST CASE ORACLE INCOMPLETE
-testCase30.yml
-testCase31.yml
-testCase32.yml
-testCase34.yml
-testCase35.yml
-testCase36.yml
-
+KNOWN ISSUES
+testCase24.yml
+testCase23.yml
+testCase22.yml
+testCase21.yml
+testCase20.yml
+testCase17.yml
+testCase15.yml
+testCase13.yml
+testCase12.yml
