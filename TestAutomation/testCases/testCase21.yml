@@ -2,9 +2,9 @@ name: expecting return int,double,string,etc...
 requirement: driver execution
 component:
     class: Driver
-    provider: ../project/src/Driver.py
+    provider: Driver.py
 method: execute()
 input:
-    constructor: TestCase([name,req,add,TestClass,../project/src/TestClass.py,,10,10])
-    input:
-oracle:
+    constructor: ["name","req","add","TestClass","TestClass.py","",10,"double"]
+    input: void
+oracle: "double"

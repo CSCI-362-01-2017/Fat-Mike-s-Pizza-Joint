@@ -2,10 +2,10 @@ name: forgot colon :
 requirement: single line parsing
 component:
     class: TestCase
-    provider: ../project/src/TestCase.py
+    provider: TestCase.py
 method: extract_contents()
 input:
-    constructor:
+    constructor: void
     method: class TestCase
 oracle: SpecSyntaxError
 

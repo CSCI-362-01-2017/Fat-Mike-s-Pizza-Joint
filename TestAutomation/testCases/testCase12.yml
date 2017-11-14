@@ -5,6 +5,6 @@ component:
     provider: ../project/src/TestCase.py
 method: extract_contents()
 input:
-    constructor:
+    constructor: void
     method: requirement: 
 oracle: NullFieldError

@@ -1,10 +1,10 @@
 name: valid type
-requirement: store_value type checker
+requirement: store_value type validation
 component:
     class: TestCase
-    provider: ../project/src/TestCase.py
+    provider: TestCase.py
 method: store_value()
 input: 
-    constructor:
+    constructor: void
     method: 1,10,[[1,2,3,4,5],[6,7,8,9,10]]
 oracle: None

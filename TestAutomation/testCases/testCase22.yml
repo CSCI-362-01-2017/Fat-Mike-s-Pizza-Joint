@@ -2,9 +2,9 @@ name: expecting return UserSpecifiedClass
 requirement: driver execution
 component:
     class: Driver
-    provider: ../project/src/Driver.py
+    provider: Driver.py
 method: execute()
 input:
-    constructor: TestCase([name,req,add,TestClass,../project/src/TestClass.py,,10,10])
-    method:
+    constructor: ["name","req","add","TestClass","TestClass.py","",10,10]
+    method: void
 oracle: UserSpecifiedClass

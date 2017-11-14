@@ -2,9 +2,9 @@ name: class does not have method
 requirement: driver execution
 component: 
     class: Driver
-    provider: ../project/src/Driver.py
+    provider: Driver.py
 method: nonexistent()
 input:
-    constructor: TestCase([name,req,nonexistent,TestClass,../project/src/TestClass.py,"",10,10])
-    method: 
+    constructor: ["name","req","nonexistent","TestClass","TestClass.py","",10,10]
+    method: void
 oracle: AttributeError
