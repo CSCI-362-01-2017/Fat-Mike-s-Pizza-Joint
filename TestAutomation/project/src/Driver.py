@@ -8,8 +8,10 @@ class Driver:
 
     def execute(self):
         t = self.testcase
-        error = None
+        MethodError = None
+        print("-----------")
         print(self.testcase)
+        print("-----------")
         try:
            exec("from %s import %s" % (t.component_provider, t.component_class))
         except ImportError:
@@ -21,49 +23,45 @@ class Driver:
         except:
             print("Unexpected error encountered in import, congrats!")
             raw = str(sys.exc_info()[0]).split()[1]
-            error = "UnexpectedImport" + raw[1:len(raw)-2]
-            print("Error: %s" % error)
-            return error
-        if error is None:
-            try:
-                if t.input_constructor != "static":
-                    TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
-            except NameError:
-                print("Error in construction: constructor for class %s not found" % t.component_provider)
-                error = "NameError"
-            except TypeError:
-                print("Error in construction: invalid number of arguments to constructor")
-                error = "TypeError"
-            except:
-                print("Unexpected error encountered in construction, congrats!")
-                raw = str(sys.exc_info()[0]).split()[1]
-                error = "UnexpectedConstruction" + raw[1:len(raw)-2]
-                print("Error: %s" % error)
-        if error is None:
-            try:
-                if t.input_constructor == "static":
-                    METHOD_RETURN = str(eval("%s.%s(%s)"
-                                            % (t.component_class, t.method, t.input_method)))
-                else:
-                    METHOD_RETURN = str(eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method)))
-            except AttributeError:
-                print("Error: method %s not found in class %s from provider %s"
-                      % t.method, t.component_class, t.component_provider)
-                error = "AttributeError"
-            except:
-                raw = str(sys.exc_info()[0]).split()[1]
-                error = raw[1:len(raw)-2]
-                print("Error: %s" % error)
-        if error is None:
-            print("Method : %s\nClass : %s\nReturn : %s\nOracle : %s"
-                  % (t.method, t.component_class, METHOD_RETURN, t.oracle))
+            DriverError = "UnexpectedImport" + raw[1:len(raw)-2]
+            print("Driver error: %s" % error)
+            return DriverError
+        try:
+            if t.input_constructor != "static":
+                TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
+        except NameError:
+            print("Error in construction: constructor for class %s not found" % t.component_provider)
+            return "NameError"
+        except TypeError:
+            print("Error in construction: invalid number of arguments to constructor")
+            return "TypeError"
+        except:
+            print("Error in construction: genuinely unexpected Driver error")
+            raw = str(sys.exc_info()[0]).split()[1]
+            DriverError = "UnexpectedConstruction" + raw[1:len(raw)-2]
+            print("Driver error: %s" % DriverError)
+            return DriverError
+        try:
+            if t.input_constructor == "static":
+                METHOD_RETURN = str(eval("%s.%s(%s)"
+                                        % (t.component_class, t.method, t.input_method)))
+            else:
+                METHOD_RETURN = str(eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method)))
+        except AttributeError:
+            print("Error in exectuion: method %s not found in class %s from provider %s"
+                  % t.method, t.component_class, t.component_provider)
+            return "AttributeError"
+        except:
+            raw = str(sys.exc_info()[0]).split()[1]
+            MethodError = raw[1:len(raw)-2]
+        if MethodError is None:
+            print("Method : %s\nInput : %s\nClass : %s\nReturn : %s\nOracle : %s"
+                  % (t.method, t.input_method, t.component_class, METHOD_RETURN, t.oracle))
             oracle_correct = eval("%s == %s" % (METHOD_RETURN, t.oracle))
         else:
-            print("Method : %s\nClass : %s\nError : %s\nOracle : %s"
-                  % (t.method, t.component_class, error, t.oracle))
-            print("Method %s from class %s raised %s" % (t.method, t.component_class, error))
-            print("Oracle predicted %s" % t.oracle)
-            oracle_correct = eval("%s == %s" % (error, t.oracle))
+            print("Method : %s\nInput : %s\nClass : %s\nError : %s\nOracle : %s"
+                  % (t.method, t.input_method, t.component_class, MethodError, t.oracle))
+            oracle_correct = eval("%s == %s" % (MethodError, t.oracle))
         if oracle_correct:
             print("PASS")
         else:
