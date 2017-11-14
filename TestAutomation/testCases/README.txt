@@ -39,6 +39,9 @@ Driver:
      -  library import error 
 REVISIT: testCase20.yml-testCase26.yml
 
+KNOWN GOOD
+testCase01.yml-testCase03.yml
+
 KNOWN ISSUES
 testCase24.yml
 testCase23.yml
@@ -49,3 +52,8 @@ testCase17.yml
 testCase15.yml
 testCase13.yml
 testCase12.yml
+testCase10.yml
+testCase09.yml
+testCase05.yml
+testCase04.yml
+

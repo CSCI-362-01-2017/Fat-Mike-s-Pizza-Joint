@@ -7,4 +7,4 @@ method: parse_syntax
 input:
     constructor: static
     method: "testCases/brokenParseFiles/MissingSpecError.yml"
-oracle: MissingSpecError
+oracle: None 
