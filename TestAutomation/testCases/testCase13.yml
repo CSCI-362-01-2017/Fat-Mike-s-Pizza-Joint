@@ -1,0 +1,10 @@
+name: NullFieldError
+requirement: single line parsing
+component: 
+    class: TestCase
+    provider: ../project/src/TestCase.py
+method: extract_contents()
+input:
+    constructor:
+    method: 
+oracle: NullFieldError

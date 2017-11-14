@@ -2,7 +2,7 @@ name: invalid type
 requirement: store_value type verification
 component: 
     class: TestCase
-    Provider: TestCase.py
+    Provider: ../project/src/TestCase.py
 method: store_value()
 input: 
     constructor:

@@ -2,7 +2,7 @@ name: valid type
 requirement: store_value type checker
 component:
     class: TestCase
-    provider: TestCase.py
+    provider: ../project/src/TestCase.py
 method: store_value()
 input: 
     constructor:

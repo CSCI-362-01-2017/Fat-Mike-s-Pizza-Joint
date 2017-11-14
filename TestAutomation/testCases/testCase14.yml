@@ -1,0 +1,10 @@
+name: successful test case
+requirement: single line parsing
+component:
+    class: TestCase
+    provider: ../project/src/TestCase.py
+method: extract_contents()
+input:
+    constructor: 
+    method: requirement: single line parsing
+oracle: ["single line parsing", "name" ]
