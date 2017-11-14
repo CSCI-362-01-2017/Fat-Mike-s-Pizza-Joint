@@ -37,3 +37,16 @@ Driver:
      -  built in error
      -  user specified 
      -  library import error 
+
+CURRENT RUNTIME ERROR TEST CASES
+testCase03.yml
+testCase07.yml
+not enough arguments to format string: testCase28.yml???
+BREAK ERROR - TEST CASE ORACLE INCOMPLETE
+testCase30.yml
+testCase31.yml
+testCase32.yml
+testCase34.yml
+testCase35.yml
+testCase36.yml
+
