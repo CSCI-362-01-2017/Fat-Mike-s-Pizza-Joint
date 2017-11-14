@@ -1,10 +1,10 @@
 name: conflicting spec error
 requirement: parsing files
-Component: 
+component: 
     class: TestCase
     provider: TestCase
 method: parse_syntax
 input:
     constructor: static
     method: "testCases/brokenParseFiles/ConflictingSpecError.yml"
-oracle: ConflictingSpecError
+oracle: None

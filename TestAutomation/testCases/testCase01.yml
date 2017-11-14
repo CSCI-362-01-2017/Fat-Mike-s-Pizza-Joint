@@ -7,4 +7,4 @@ method: parse_syntax
 input:
     constructor: static
     method: "testCases/brokenParseFiles/InvalidSpecTypeError.yml"
-oracle: InvalidSpecTypeError
+oracle: None

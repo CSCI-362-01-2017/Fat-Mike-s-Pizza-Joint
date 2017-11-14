@@ -57,11 +57,11 @@ class Driver:
         if MethodError is None:
             print("Method : %s\nInput : %s\nClass : %s\nReturn : %s\nOracle : %s"
                   % (t.method, t.input_method, t.component_class, METHOD_RETURN, t.oracle))
-            oracle_correct = eval("%s == %s" % (METHOD_RETURN, t.oracle))
+            oracle_correct = eval("\"%s\" == \"%s\"" % (METHOD_RETURN, t.oracle))
         else:
             print("Method : %s\nInput : %s\nClass : %s\nError : %s\nOracle : %s"
                   % (t.method, t.input_method, t.component_class, MethodError, t.oracle))
-            oracle_correct = eval("%s == %s" % (MethodError, t.oracle))
+            oracle_correct = eval("\"%s\" == \"%s\"" % (MethodError, t.oracle))
         if oracle_correct:
             print("PASS")
         else:
