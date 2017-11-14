@@ -2,9 +2,9 @@ name: no text error
 requirement: single line parsing
 component:
     class: TestCase
-    provider: TestCase.py
-method: extract_contents()
+    provider: TestCase
+method: extract_contents
 input:
-    constructor: void
+    constructor: static
     method: 
 oracle: SpecSyntaxError

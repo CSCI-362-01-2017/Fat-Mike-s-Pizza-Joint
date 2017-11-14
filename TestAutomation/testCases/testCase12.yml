@@ -2,9 +2,9 @@ name: NullFieldError
 requirement: single line parsing
 component:
     class: TestCase
-    provider: ../project/src/TestCase.py
-method: extract_contents()
+    provider: TestCase
+method: extract_contents
 input:
-    constructor: void
-    method: requirement: 
+    constructor: static
+    method: "requirement:" 
 oracle: NullFieldError

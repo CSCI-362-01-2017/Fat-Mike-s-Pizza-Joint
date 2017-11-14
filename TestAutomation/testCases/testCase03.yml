@@ -1,10 +1,10 @@
-name: Invalid Sub Spec Error
-requirement: automated breakage unit
+name: missing spec error 
+requirement: parsing files
 component:
-    class: Class
-    provider: file.py
-method: method()
+    class: TestCase
+    provider: TestCase
+method: parse_syntax
 input:
-    constructor: "if there's something strange, sleepin in your bed", 666
-    method: "BUSTIN BUSTIN BUSTIN"
-oracle: predictor
+    constructor: static
+    method: "brokenParseFiles/MissingSpecError.yml"
+oracle: MissingSpecError
