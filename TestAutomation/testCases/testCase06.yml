@@ -7,4 +7,4 @@ method: parse_syntax
 input:
     constructor: static
     method: "testCases/brokenParseFiles/SpecSyntaxError.yml"
-oracle: SpecSyntaxError
+oracle: None

@@ -1,9 +1,9 @@
-name: NullFieldError1
+name: field error one
 requirement: parsing files
 component:
     class: TestCase
     provider: TestCase
 input:
     constructor: static
-    method: "testCases/brokenParseFiles/NullFieldError.yml"
-oracle: NullFieldError
+    method: "testCases/brokenParseFiles/NullFieldError1.yml"
+oracle: None
