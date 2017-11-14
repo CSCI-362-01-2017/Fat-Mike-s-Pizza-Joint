@@ -1,10 +1,10 @@
-name: expecting return int,double,string,etc...
+name: expecting error library import
 requirement: driver execution
-component:
+component: 
     class: Driver
     provider: Driver.py
-method: execute()
-input:
-    constructor: ["name","req","add","TestClass","TestClass.py","","10","double"]
-    input: void
-oracle: "double"
+method: execute
+input: 
+    constructor: TestCase(["name","req","add","TestClass","BullShit","","10","10"])
+    method: void
+oracle: ImportError

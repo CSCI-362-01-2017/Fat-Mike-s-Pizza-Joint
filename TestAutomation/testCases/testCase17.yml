@@ -3,8 +3,8 @@ requirement: driver execution
 component: 
     class: Driver
     provider: Driver.py
-method: nonexistent()
+method: execute()
 input:
-    constructor: ["name","req","nonexistent","TestClass","TestClass.py","","10","10"]
+    constructor: TestCase(["name","req","nonexistent","TestClass","TestClass","","10","10"])
     method: void
 oracle: AttributeError

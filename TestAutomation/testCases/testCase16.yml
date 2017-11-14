@@ -5,6 +5,6 @@ component:
     provider: Driver.py
 method: execute()
 input:
-    constructor: ["name","req","add","TestClass","NonExistent.py","","10","10"]
+    constructor: TestCase(["name","req","add","TestClass","NonExistent","","10","10"])
     method: void
-oracle: NameError 
+oracle: ImportError

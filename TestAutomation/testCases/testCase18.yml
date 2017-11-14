@@ -1,10 +1,10 @@
-name: invalid arguments to constrcutor
+name: invalid arguments to constructor
 requirement: driver execution
 component: 
     class: Driver
     provider: Driver.py
 method: execute()
 input:
-    constructor: ["name","req","execute","Driver","Driver.py","invalidInput","10","10"]
+    constructor: TestCase(["name","req","add","TestClass","TestClass","",10,10])
     method: void
-oracle: NameError
+oracle: TypeError

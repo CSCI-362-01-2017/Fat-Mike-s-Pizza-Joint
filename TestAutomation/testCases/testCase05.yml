@@ -3,8 +3,8 @@ requirement: parsing files
 component:
     class: TestCase
     provider: TestCase
-method: parsey_syntax
+method: parse_syntax
 input:
     constructor: static
     method: "testCases/brokenParseFiles/NullFieldError2.yml"
-oracle: NullFieldError
+oracle: None
