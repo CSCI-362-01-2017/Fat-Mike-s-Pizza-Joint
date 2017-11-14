@@ -7,4 +7,4 @@ method: execute()
 input:
     constructor: ["name","req","execute","Driver","Driver.py","invalidInput","10","10"]
     method: void
-oracle: UnexpectedConstruction
+oracle: NameError

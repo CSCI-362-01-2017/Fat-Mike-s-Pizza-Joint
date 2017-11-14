@@ -6,6 +6,6 @@ component:
 method: extract_contents
 input:
     constructor: static
-    method: "class TestCase"
+    method: "class: TestCase"
 oracle: SpecSyntaxError
 

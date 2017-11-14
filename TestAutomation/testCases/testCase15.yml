@@ -3,7 +3,7 @@ requirement: Driver execution
 component:
     class: Driver
     provider: Driver.py
-method: execute()
+method: execute
 input:
     constructor: ["name","req","add","NonExistent","TestClass.py","","10","10"]
     method: void

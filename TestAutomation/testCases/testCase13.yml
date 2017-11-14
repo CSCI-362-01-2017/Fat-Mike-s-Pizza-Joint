@@ -6,5 +6,5 @@ component:
 method: extract_contents
 input:
     constructor: static
-    method: 
+    method: Null 
 oracle: NullFieldError
