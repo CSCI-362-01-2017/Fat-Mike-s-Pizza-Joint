@@ -1,0 +1,10 @@
+name: InvalidConstructerfloat
+requirement: invalid constructer passed in the form of a float
+component:
+    class: TestClass
+    provider: TestClass.py
+method: add()
+input:
+    constructor: 9.0
+    method: 5
+oracle: Break

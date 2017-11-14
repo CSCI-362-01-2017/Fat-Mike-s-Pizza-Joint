@@ -1,0 +1,10 @@
+name: InvalidConstructerString
+requirement: invalid constructer passed in the form of a string
+component:
+    class: TestClass
+    provider: TestClass.py
+method: add()
+input:
+    constructor: "InvalidString"
+    method: 5
+oracle: Break

@@ -1,0 +1,10 @@
+name: InvalidMethodarray
+requirement:  method passed invalid input in the form of an array
+component:
+    class: TestClass
+    provider: TestClass.py
+method: add()
+input:
+    constructor: void
+    method: [0,1,2,3,4]
+oracle: Break

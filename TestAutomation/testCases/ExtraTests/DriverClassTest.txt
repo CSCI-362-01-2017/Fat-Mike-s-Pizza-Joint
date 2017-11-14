@@ -1,0 +1,10 @@
+name: DriverClassTest
+requirement: Class does not exist
+component:
+    class: NonExistantClass
+    provider: TestClass.py
+method: add()
+input:
+    constructor: void
+    method: 5
+oracle: 5

@@ -1,0 +1,10 @@
+name: InvalidMethodString
+requirement:  method passed invalid input in the form of a string
+component:
+    class: TestClass
+    provider: TestClass.py
+method: add()
+input:
+    constructor: void
+    method: "InvalidString"
+oracle: Break
