@@ -5,12 +5,12 @@ Name: conflicting spec error<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/ConflictingSpecError.yml"<br>
 Oracle: None<br>
 {<br>
-Error in file: one or more conflicting specifications within test case<br>
+Error in file: field for one or more specifications is empty<br>
 }<br>
 Return : None<br>
 PASS<br>
@@ -23,12 +23,12 @@ Name: invalid spec type error<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/InvalidSpecTypeError.yml"<br>
 Oracle: None<br>
 {<br>
-Error in file: invalid specification type for test case<br>
+Error in file: field for one or more specifications is empty<br>
 }<br>
 Return : None<br>
 PASS<br>
@@ -41,12 +41,12 @@ Name: invalid sub spec error<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/InvalidSubSpecError.yml"<br>
 Oracle: None<br>
 {<br>
-Error in file: invalid sub specification type<br>
+Error in file: field for one or more specifications is empty<br>
 }<br>
 Return : None<br>
 PASS<br>
@@ -59,13 +59,12 @@ Name: missing spec error<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/MissingSpecError.yml"<br>
 Oracle: None<br>
 {<br>
-Missing spec: method<br>
-Error in file: test case is missing a required specification<br>
+Error in file: field for one or more specifications is empty<br>
 }<br>
 Return : None<br>
 PASS<br>
@@ -78,7 +77,7 @@ Name: field error one<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/NullFieldError1.yml"<br>
 Oracle: None<br>
@@ -96,7 +95,7 @@ Name: NullFieldError2<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/NullFieldError2.yml"<br>
 Oracle: None<br>
@@ -114,7 +113,7 @@ Name: spec syntax error<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/SpecSyntaxError.yml"<br>
 Oracle: None<br>
@@ -132,14 +131,15 @@ Name: valid parse<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/Valid.yml"<br>
 Oracle: ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']<br>
 {<br>
+Error in file: field for one or more specifications is empty<br>
 }<br>
-Return : ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']<br>
-PASS<br>
+Return : None<br>
+FAIL<br>
 </body>
 </html>
 -----------------------------------------------------------
@@ -149,14 +149,14 @@ Name: valid type<br>
 Requirement: store_value type validation<br>
 Method: store_value<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "nonmatch","write",[["match","",0]]<br>
 Oracle: InvalidSpecTypeError<br>
 {<br>
 }<br>
-Return : InvalidSpecTypeError<br>
-PASS<br>
+Return : None<br>
+FAIL<br>
 </body>
 </html>
 -----------------------------------------------------------
@@ -166,14 +166,14 @@ Name: invalid type<br>
 Requirement: store_value type verification<br>
 Method: store_value<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "match","write",[["match","",0]]<br>
 Oracle: None<br>
 {<br>
 }<br>
-Return : None<br>
-PASS<br>
+Return : InvalidSpecTypeError<br>
+FAIL<br>
 </body>
 </html>
 -----------------------------------------------------------
@@ -183,7 +183,7 @@ Name: no text error<br>
 Requirement: single line parsing<br>
 Method: extract_contents<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: " "<br>
 Oracle: IndexError<br>
@@ -200,7 +200,7 @@ Name: forgot colon<br>
 Requirement: single line parsing<br>
 Method: extract_contents<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "class TestCase"<br>
 Oracle: SpecSyntaxError<br>
@@ -217,7 +217,7 @@ Name: NullFieldError<br>
 Requirement: single line parsing<br>
 Method: extract_contents<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "requirement:"<br>
 Oracle: NullFieldError<br>
@@ -234,7 +234,7 @@ Name: NullFieldError<br>
 Requirement: single line parsing<br>
 Method: extract_contents<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: ""<br>
 Oracle: IndexError<br>
@@ -251,14 +251,14 @@ Name: successful test case for single line parsing<br>
 Requirement: single line parsing<br>
 Method: extract_contents<br>
 Class: TestCase<br>
-Provider: TestCase<br>
+Provider: brokenPythonFiles.TestCase<br>
 Constructor: static<br>
 Method Input: "requirement: single line parsing"<br>
 Oracle: ['requirement', 'single line parsing']<br>
 {<br>
 }<br>
-Return : ['requirement', 'single line parsing']<br>
-PASS<br>
+Return : ['requirement', 'parsing']<br>
+FAIL<br>
 </body>
 </html>
 -----------------------------------------------------------
@@ -322,24 +322,12 @@ Name: class does not have method<br>
 Requirement: driver execution<br>
 Method: execute<br>
 Class: Driver<br>
-Provider: Driver<br>
+Provider: BrokenPythonFiles.Driver<br>
 Constructor: TestCase(["name","req","nonexistent","TestClass","TestClass","","10","10"])<br>
 Method Input:<br>
 Oracle: AttributeError<br>
 {<br>
-Name: name<br>
-Requirement: req<br>
-Method: nonexistent<br>
-Class: TestClass<br>
-Provider: TestClass<br>
-Constructor:<br>
-Method Input: 10<br>
-Oracle: 10<br>
-{<br>
-Error in exectuion: method nonexistent not found in class TestClass from provider TestClass<br>
-}<br>
-Return : AttributeError<br>
-PASS<br>
+Error in import: class Driver or module BrokenPythonFiles.Driver not found<br>
 </body>
 </html>
 -----------------------------------------------------------

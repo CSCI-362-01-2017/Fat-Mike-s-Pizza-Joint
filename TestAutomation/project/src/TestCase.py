@@ -20,7 +20,7 @@ class TestCase:
                 error = "SpecSyntaxError" # They forgot the ':' before the text
                 return error
             else:
-                fi = 2 
+                fi = 2
         if token != "component" and token != "input":
             try:
                 field = " ".join(full[fi:])

@@ -9,7 +9,7 @@ class TestCase:
         error = None
         if token.find(":") != -1:
             token = token[:len(token)-1] # "Normalize" token by removing ':'
-            fi = 1 # 'field index' = index for start of field
+            fi = 3 # 'field index' = index for start of field
         else:
             try:
                 colon = full[1]
@@ -82,7 +82,8 @@ class TestCase:
                     if token == "method" and field.find("()") != -1:
                         field = field[:len(field)-2] # "Normalize" method_name by removing '()'
                     elif token == "component_provider" and field.find(".py") != -1:
-                        field = field[:len(field)-3] # "Normalize" method_name by removing '()'
+                        field = field[:len(field)-5] # "Normalize" method_name by removing '()'
+                        error = None
                     error = TestCase.store_value(token, field, fieldmap) # will remain None if no error
                     if error is not None:
                         break

@@ -2,7 +2,7 @@ name: invalid type
 requirement: store_value type verification
 component: 
     class: TestCase
-    provider: TestCase
+    provider: brokenPythonFiles/TestCase
 method: store_value
 input: 
     constructor: static

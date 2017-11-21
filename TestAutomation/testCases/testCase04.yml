@@ -2,7 +2,7 @@ name: field error one
 requirement: parsing files
 component:
     class: TestCase
-    provider: TestCase
+    provider: brokenPythonFiles/TestCase
 method: parse_syntax
 input:
     constructor: static

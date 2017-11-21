@@ -2,7 +2,7 @@ name: NullFieldError2
 requirement: parsing files
 component:
     class: TestCase
-    provider: TestCase
+    provider: brokenPythonFiles/TestCase
 method: parse_syntax
 input:
     constructor: static

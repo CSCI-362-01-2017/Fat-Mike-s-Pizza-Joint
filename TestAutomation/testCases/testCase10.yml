@@ -2,7 +2,7 @@ name: no text error
 requirement: single line parsing
 component:
     class: TestCase
-    provider: TestCase
+    provider: brokenPythonFiles/TestCase
 method: extract_contents
 input:
     constructor: static

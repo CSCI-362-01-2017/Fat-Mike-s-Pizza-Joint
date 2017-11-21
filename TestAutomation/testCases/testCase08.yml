@@ -2,7 +2,7 @@ name: valid type
 requirement: store_value type validation
 component:
     class: TestCase
-    provider: TestCase
+    provider: brokenPythonFiles/TestCase
 method: store_value
 input: 
     constructor: static
