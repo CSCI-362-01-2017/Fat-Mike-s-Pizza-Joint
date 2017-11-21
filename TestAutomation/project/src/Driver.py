@@ -10,9 +10,8 @@ class Driver:
     def execute(self):
         t = self.testcase
         MethodError = None
-        print("-----------")
         print(self.testcase)
-        print("-----------")
+        print("{")
         try:
            exec("from %s import %s" % (t.component_provider, t.component_class))
         except ImportError:
@@ -55,13 +54,14 @@ class Driver:
         except:
             raw = str(sys.exc_info()[0]).split()[1]
             MethodError = raw[1:len(raw)-2]
+        print("}")
         if MethodError is None:
-            print("Method : %s\nInput : %s\nClass : %s\nReturn : %s\nOracle : %s"
-                  % (t.method, t.input_method, t.component_class, METHOD_RETURN, t.oracle))
+            print("Return : %s"
+                  % METHOD_RETURN)
             oracle_correct = eval("\"%s\" == \"%s\"" % (METHOD_RETURN, t.oracle))
         else:
-            print("Method : %s\nInput : %s\nClass : %s\nError : %s\nOracle : %s"
-                  % (t.method, t.input_method, t.component_class, MethodError, t.oracle))
+            print("Error : %s"
+                  % MethodError)
             oracle_correct = eval("\"%s\" == \"%s\"" % (MethodError, t.oracle))
         if oracle_correct:
             print("PASS")

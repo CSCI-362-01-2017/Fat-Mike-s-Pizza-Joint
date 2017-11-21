@@ -14,6 +14,11 @@ cat > "../reports/$SHORTNAME.html" << EOF
 </head>
 <body>
 EOF
+cat > "../reports/$SHORTNAME.html" << EOF
+-----------------------------------------------------------
+$SHORTNAME
+-----------------------------------------------------------<br>
+EOF
 while read line; do
     echo "$line<br>" >> "../reports/$SHORTNAME.html"
 done < "$INFILE"
