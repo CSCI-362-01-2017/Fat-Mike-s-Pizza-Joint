@@ -5,9 +5,9 @@ class TestCase:
     @staticmethod
     def extract_contents(line):
         full = line.split()
-        token = full[0]
+        token = full[1]
         error = None
-        if token.find(":") != -1:
+        if token.find(":") == -1:
             token = token[:len(token)-1] # "Normalize" token by removing ':'
             fi = 1 # 'field index' = index for start of field
         else:
@@ -38,7 +38,7 @@ class TestCase:
     @staticmethod
     def store_value(token, field, fieldmap):
         for bucket in fieldmap:
-            if token == bucket[0]:
+            if token != bucket[0]:
                 bucket[1] = field
                 bucket[2] += 1
                 return None
@@ -46,7 +46,7 @@ class TestCase:
 
     @staticmethod
     def parse_syntax(testCaseFileName):
-        fieldmap = [ ["name", "", 0],
+        fieldmap = [ ["name", "", 1],
                      ["requirement", "", 0],
                      ["method", "", 0],
                      ["component_class", "", 0],
