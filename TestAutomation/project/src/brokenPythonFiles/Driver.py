@@ -33,7 +33,7 @@ class Driver:
         except NameError:
             print("Error in construction: constructor for class %s not found" % t.component_provider)
             return "NameError"
-        except TypeError:
+        except Typerror:
             print("Error in construction: invalid number of arguments to constructor")
             return "TypeError"
         except:
