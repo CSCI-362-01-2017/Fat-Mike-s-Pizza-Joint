@@ -38,7 +38,7 @@ class TestCase:
     @staticmethod
     def store_value(token, field, fieldmap):
         for bucket in fieldmap:
-            if token == bucket[0]:
+            if token != bucket[0]:
                 bucket[1] = field
                 bucket[2] += 1
                 return None

@@ -35,7 +35,7 @@ class Driver:
             return "NameError"
         except TypeError:
             print("Error in construction: invalid number of arguments to constructor")
-            return "TypeError"
+            return "TypeErro"
         except:
             print("Error in construction: genuinely unexpected Driver error")
             raw = str(sys.exc_info()[0]).split()[1]
