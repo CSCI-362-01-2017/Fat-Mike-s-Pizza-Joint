@@ -1,4 +1,5 @@
 #!/bin/bash
+source printlast
 OUTPUT=""
 while read line; do
     if [ "$line" = "EOF" ]; then
@@ -20,11 +21,13 @@ getfield() {
 SUMMARY="`tail -n 10 \"$1\"`"
 
 setvar() {
-VAR="`printf \"$SUMMARY\" | sed -n $1p`"
-VAR="`getfield \"$VAR\"`"
-printf "$VAR"
+    VAR="`printf \"$SUMMARY\" | sed -n $1p`"
+    VAR="`getfield \"$VAR\"`"
+    printf "$VAR"
 }
 
+TITLE="`printlast "$1"`"
+#TITLE="`printf "$1" | awk '{print substr($1, 1, length($1)-4)}'`"
 NAME="`setvar 1`"
 REQUIREMENT="`setvar 2`"
 METHOD="`setvar 3`"
@@ -43,7 +46,6 @@ if [ "$RESULT" = "PASS" ]; then
 else
     RESULT_BG="$FAIL_RED"
 fi
-printf "$NAME\n$REQUIREMENT\n$METHOD\n$CLASS\n$PROVIDER\n$CONSTRUCTOR_INPUT\n$METHOD_INPUT\n$ORACLE\n$RETURN\n$RESULT\n$RESULT_BG\n"
 
 cat << EOF
 <html>
@@ -55,7 +57,7 @@ cat << EOF
         <div align="center">
             <table width="60%" border="1" cellpadding="0" cellspacing="2" bgcolor="white">
                 <tr>
-                    <td colspan="2" width="50%" align="center" bgcolor="#c3e7ed">testCaseTitle</td>
+                    <td colspan="2" width="50%" align="center" bgcolor="#c3e7ed">$TITLE</td>
                     <td width="50%" align="center" bgcolor="#c3e7ed">Detail view</td>
                 </tr>
                 <tr>
