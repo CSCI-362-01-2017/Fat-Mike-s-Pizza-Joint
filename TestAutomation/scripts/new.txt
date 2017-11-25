@@ -1,0 +1,13 @@
+Output:
+Error in file: field for one or more specifications is empty
+EOF
+name: conflicting spec error
+requirement: parsing files
+method: parse_syntax
+class: TestCase
+provider: brokenPythonFiles.TestCase
+constructor_input: static
+method_input: "testCases/brokenParseFiles/ConflictingSpecError.yml"
+oracle: None
+return: None
+result: FAIL    

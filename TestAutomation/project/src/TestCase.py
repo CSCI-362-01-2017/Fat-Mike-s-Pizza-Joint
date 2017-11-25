@@ -112,7 +112,7 @@ class TestCase:
             return blueprint
     
     def __str__(self):
-        return "Name: " + self.name + "\n" + "Requirement: " + self.requirement + "\n" + "Method: " + self.method + "\n" + "Class: " + self.component_class + "\n" + "Provider: " + self.component_provider + "\n" + "Constructor: " + self.input_constructor + "\n" + "Method Input: " + self.input_method + "\n" + "Oracle: " + self.oracle
+        return "name: " + self.name + "\n" + "requirement: " + self.requirement + "\n" + "method: " + self.method + "\n" + "class: " + self.component_class + "\n" + "provider: " + self.component_provider + "\n" + "constructor_input: " + self.input_constructor + "\n" + "method_input: " + self.input_method + "\n" + "oracle: " + self.oracle
 
     def __init__(self, blueprint):
         if blueprint is not None:

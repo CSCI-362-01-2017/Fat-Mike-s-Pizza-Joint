@@ -5,14 +5,13 @@ Name: valid parse<br>
 Requirement: parsing files<br>
 Method: parse_syntax<br>
 Class: TestCase<br>
-Provider: brokenPythonFiles.TestCase<br>
+Provider: TestCase<br>
 Constructor: static<br>
 Method Input: "testCases/brokenParseFiles/Valid.yml"<br>
 Oracle: ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']<br>
 {<br>
-Error in file: field for one or more specifications is empty<br>
 }<br>
-Return : None<br>
-FAIL<br>
+Return : ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']<br>
+PASS<br>
 </body>
 </html>

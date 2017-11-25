@@ -5,4 +5,4 @@ print(splitstr[len(splitstr)-1])
 EOF
 }
 
-printlast $1
+#printlast $1
