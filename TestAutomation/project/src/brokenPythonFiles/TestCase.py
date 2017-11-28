@@ -9,7 +9,7 @@ class TestCase:
         error = None
         if token.find(":") != -1:
             token = token[:len(token)-1] # "Normalize" token by removing ':'
-            fi = 3 # 'field index' = index for start of field
+            fi = 1 # 'field index' = index for start of field
         else:
             try:
                 colon = full[1]
@@ -20,7 +20,7 @@ class TestCase:
                 error = "SpecSyntaxError" # They forgot the ':' before the text
                 return error
             else:
-                fi = 2 
+                fi = 2
         if token != "component" and token != "input":
             try:
                 field = " ".join(full[fi:])
@@ -38,7 +38,7 @@ class TestCase:
     @staticmethod
     def store_value(token, field, fieldmap):
         for bucket in fieldmap:
-            if token != bucket[0]:
+            if token == bucket[0]:
                 bucket[1] = field
                 bucket[2] += 1
                 return None
@@ -82,8 +82,7 @@ class TestCase:
                     if token == "method" and field.find("()") != -1:
                         field = field[:len(field)-2] # "Normalize" method_name by removing '()'
                     elif token == "component_provider" and field.find(".py") != -1:
-                        field = field[:len(field)-5] # "Normalize" method_name by removing '()'
-                        error = None
+                        field = field[:len(field)-3] # "Normalize" method_name by removing '()'
                     error = TestCase.store_value(token, field, fieldmap) # will remain None if no error
                     if error is not None:
                         break
@@ -95,7 +94,8 @@ class TestCase:
                       "NullFieldError": "field for one or more specifications is empty" }
         if error is None:
             for bucket in fieldmap:
-                if bucket[2] > 1:
+                #if bucket[2] > 1:
+                if bucket[2] > 0: # FAULT: Will raise conflicting spec error in abscence of one
                     error = "ConflictingSpecError"
                 elif bucket[2] == 0:
                     error = "MissingSpecError"
@@ -113,7 +113,7 @@ class TestCase:
             return blueprint
     
     def __str__(self):
-        return "Name: " + self.name + "\n" + "Requirement: " + self.requirement + "\n" + "Method: " + self.method + "\n" + "Class: " + self.component_class + "\n" + "Provider: " + self.component_provider + "\n" + "Constructor: " + self.input_constructor + "\n" + "Method Input: " + self.input_method + "\n" + "Oracle: " + self.oracle
+        return "name: " + self.name + "\n" + "requirement: " + self.requirement + "\n" + "method: " + self.method + "\n" + "class: " + self.component_class + "\n" + "provider: " + self.component_provider + "\n" + "constructor_input: " + self.input_constructor + "\n" + "method_input: " + self.input_method + "\n" + "oracle: " + self.oracle
 
     def __init__(self, blueprint):
         if blueprint is not None:

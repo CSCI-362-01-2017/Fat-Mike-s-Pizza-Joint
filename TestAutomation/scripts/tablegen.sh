@@ -62,7 +62,7 @@ cat << EOF
                 </tr>
                 <tr>
                     <td bgcolor="f2e4b9">Name:</td><td width="30%" align="center">$NAME</td>
-                    <td rowspan="13" width="50%">$OUTPUT</td>
+                    <td rowspan="13" width="50%">`printf "$OUTPUT"`</td>
                 </tr>
                 <tr>
                     <td bgcolor="f2e4b9">Requirement:</td><td align="center">$REQUIREMENT</td>

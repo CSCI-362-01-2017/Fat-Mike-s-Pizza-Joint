@@ -2,7 +2,7 @@ name: invalid spec type error
 requirement: parsing files
 component: 
     class: TestCase
-    provider: brokenPythonFiles/TestCase
+    provider: TestCase
 method: parse_syntax
 input:
     constructor: static

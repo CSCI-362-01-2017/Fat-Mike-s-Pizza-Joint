@@ -1,0 +1,10 @@
+name: expecting error library import
+requirement: driver execution
+component:
+    class: Driver
+    provider: brokenPythonFiles/Driver.py 
+    method: execute
+input:
+    constructor: TestCase(["name","req","add","TestClass","BullShit","","10","10"])
+    method: void
+oracle: ImportError

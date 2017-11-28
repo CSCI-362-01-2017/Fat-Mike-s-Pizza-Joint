@@ -2,7 +2,7 @@ name: conflicting spec error
 requirement: parsing files
 component: 
     class: TestCase
-    provider: brokenPythonFiles/TestCase
+    provider: TestCase.py
 method: parse_syntax
 input:
     constructor: static

@@ -1,0 +1,10 @@
+name: spec syntax error
+requirement: parsing files
+component:
+    class: TestCase
+    provider: brokenPythonFiles/TestCase 
+    method: parse_syntax
+input:
+    constructor: static
+    method: "testCases/brokenParseFiles/SpecSyntaxError.yml"
+oracle: None
