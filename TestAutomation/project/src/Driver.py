@@ -47,7 +47,7 @@ class Driver:
             else:
                 METHOD_RETURN = str(eval("TEST_CLASS_INST.%s(%s)" % (t.method, t.input_method)))
         except AttributeError:
-            print("Error in exectuion: method %s not found in class %s from provider %s"
+            print("Error in execution: method %s not found in class %s from provider %s"
                   % (t.method, t.component_class, t.component_provider))
             return "AttributeError"
         except:

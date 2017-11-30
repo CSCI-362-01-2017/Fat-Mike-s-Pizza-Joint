@@ -2,7 +2,7 @@
 requirement: driver execution
 component:
     class: Driver
-    provider: brokenPythonFiles/BrokenPythonFiles/Driver.py 
+    provider: brokenPythonFiles/Driver.py 
     method: execute()
 input:
     constructor: TestCase(["name","req","nonexistent","TestClass","TestClass","","10","10"])

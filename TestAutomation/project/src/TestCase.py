@@ -36,7 +36,7 @@ class TestCase:
             return [ token, field ]
     
     @staticmethod
-    def store_value(token, field, fieldmap):
+    def store_value(token, field, fieldmap): # Parse and store field value from a single line of input
         for bucket in fieldmap:
             if token == bucket[0]:
                 bucket[1] = field

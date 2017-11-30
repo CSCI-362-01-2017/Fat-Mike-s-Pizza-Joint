@@ -15,10 +15,12 @@ class Driver:
            exec("from %s import %s" % (t.component_provider, t.component_class))
         except ImportError:
             print("Error in import: class %s or module %s not found" % (t.component_class, t.component_provider))
-            return "ImportError"
+            #return "ImportError" # FAULT
+            return "ModuleNotFoundError"
         except ModuleNotFoundError:
             print("Error in import: provider module %s not found" % t.component_provider)
-            return "ModuleNotFoundError"
+            return "ImportError"
+            #return "ModuleNotFoundError" # FAULT
         except:
             print("Unexpected error encountered in import, congrats!")
             raw = str(sys.exc_info()[0]).split()[1]
@@ -30,7 +32,7 @@ class Driver:
                 TEST_CLASS_INST = eval("%s(%s)" % (t.component_class, t.input_constructor))
         except NameError:
             print("Error in construction: constructor for class %s not found" % t.component_provider)
-            return "NameError"
+            return "NameError" 
         except TypeError:
             print("Error in construction: invalid number of arguments to constructor")
             return "TypeError"

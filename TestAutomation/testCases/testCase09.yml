@@ -1,10 +1,10 @@
-name: invalid type
-requirement: store_value type verification
-component: 
-    class: TestCase
+name: valid parse: ordering 3
+requirement: parsing files 
+component:
+    class: TestCase 
     provider: TestCase
-method: store_value
-input: 
-    constructor: static
-    method: "match","write",[["match","",0]] 
-oracle: None 
+method: parse_syntax
+input:
+    constructor: static 
+    method: "testCases/brokenParseFiles/ValidOrder3.yml"
+oracle: ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']

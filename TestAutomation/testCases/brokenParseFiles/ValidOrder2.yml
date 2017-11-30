@@ -1,0 +1,10 @@
+component:
+    class: TestClass
+    provider: TestClass.py
+input:
+    constructor: void
+    method: 5
+oracle: 5
+name: one
+requirement: two
+method: add()

@@ -1,0 +1,10 @@
+name: invalid type
+requirement: store_value type validation
+component:
+    class: TestCase
+    provider: TestCase
+method: store_value
+input: 
+    constructor: static
+    method: "nonmatch","write",[["match","",0]] 
+oracle: InvalidSpecTypeError 

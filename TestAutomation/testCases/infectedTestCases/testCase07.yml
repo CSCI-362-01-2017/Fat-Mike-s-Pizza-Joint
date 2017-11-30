@@ -1,4 +1,4 @@
-name: valid parse
+name: valid parse: ordering 1
 requirement: parsing files
 component:
     class: TestCase
@@ -6,5 +6,5 @@ component:
     method: parse_syntax
 input:
     constructor: static
-    method: "testCases/brokenParseFiles/Valid.yml"
+    method: "testCases/brokenParseFiles/ValidOrder1.yml"
 oracle: ['one', 'two', 'add', 'TestClass', 'TestClass', '', '5', '5']
