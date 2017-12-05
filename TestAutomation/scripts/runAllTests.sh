@@ -15,4 +15,7 @@ done < tcs
 rm tcs
 cd ../reports
 cat * > final.html
+if [ "`uname`" = "Darwin" ]; then
+    alias xdg-open="open"
+fi
 xdg-open final.html
